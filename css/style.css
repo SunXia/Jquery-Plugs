@@ -1,0 +1,23 @@
+@charset "utf-8";
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+    font-style: inherit;
+    font-weight: inherit;
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+
+}
+body, input, button, select, textarea {color: #333;font: 12px/1.5 Tahoma,"微软雅黑",'Simsun';}
+.slidebox{width: 100%; position:relative; border: 1px solid #ddd; margin-top: 70px; padding: 10px;}
+.slidebox ul.slide{width: 100%;}
+.slidebox ul.slide li img{width: 100%;}
+.slidebox ul.lib{position: absolute; text-align: center; z-index: 999;bottom:50px; left: 50%; width: 40px; margin-left: -20px;}
+.slidebox ul.lib li{ background: #000000; width: 10px; height: 10px; border-radius: 5px; float: left; margin-right: 10px; }
+.slidebox ul.lib li.on{background: #fff;border: 1px solid #000;}
+.pic-tit{ text-align: center; line-height: 30px; font-size: 16px;}
+.cart{ margin-top: 10px;}
+.price{margin-top: 10px;}
+.price strong{ line-height: 25px; color: #c9302c; font-size: 16px;}
+.jian{ float: left; width: 25px; height:25px;background: #ccc; border: none; text-align: center; color: #fff;}
+.sl{ width: 40px; border: 1px solid #ccc; height: 25px; background:none; float: left;}
+.pr{text-align: right;}

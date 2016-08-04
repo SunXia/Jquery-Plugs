@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Bootstrap</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="js/jquery1.42.min.js"></script>
+    <script>
+        $(function(){
+            //轮播
+           var slidebox=$(".slidebox");
+            var imgs=$(".slide li");
+            var libs=$(".lib li");
+            var tit=$(".pic-tit p");
+            var i=0;
+           var t= setInterval(autoPlay,1000);
+            function autoPlay(){
+                imgs.hide();
+                tit.hide();
+                imgs.eq(i).show();
+                libs.eq(i).addClass("on").siblings().removeClass("on");
+                tit.eq(i).show().siblings().hide();
+                i++;
+                if(i==imgs.length)
+                {
+                    i=0;
+                }
+            }
+            libs.hover(function(){
+                clearInterval(t);
+                $(this).addClass("on").siblings().removeClass("on");
+                var foo= $(this).index();
+                imgs.hide();
+                tit.hide();
+                imgs.eq(foo).show();
+                tit.eq(foo).show();
+
+            },function(){
+              t= setInterval(autoPlay,1000);
+            })
+            //商品数量加减
+            //增加
+          $("#add").click(function(){
+               var sl=$("input[class*=sl]");
+             // var num_add = parseInt(sl.val())+1;
+              sl.val(parseInt(sl.val())+1)
+              // ('input[class*=text_box]')
+             // sl.val(num_add);
+
+})
+//减少
+
+            $("#sub").click(function(){
+                var sl=$("input[class*=sl]");
+                sl.val(parseInt(sl.val())-1);
+                if(sl.val()<1){
+                    sl.val(0);
+                }
+
+
+            })
+        })
+    </script>
+</head>
+<body>
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="">
+        <ul class="nav navbar-nav">
+            <li style="padding-left: 10px;"><a href="">熬大猫</a> </li>
+        </ul>
+    </div>
+</div>
+    <div class="container-fluid">
+    <div class="slidebox">
+        <ul class="lib">
+            <li class="on"></li>
+            <li class=""></li>
+        </ul>
+        <ul class="slide">
+            <li><img src="images/xcj_0.jpeg"> </li>
+            <li style="display: none"><img src="images/xcj-2.jpg"> </li>
+        </ul>
+        <div class="pic-tit">
+            <p>小纯洁</p>
+            <p  style="display: none">熬大猫</p>
+        </div>
+    </div>
+        <div class="row price">
+        <div class="col-xs-7"><strong>￥255</strong></div>
+            <div class="col-xs-5 pr"><form class="form-inline">
+                <div class="form-group">
+                    <div class="input-group">
+                        <input class="jian" value="-" type="button" id="sub">
+                        <input type="text" class="sl" id="jq"  value="0">
+                        <input class="jian" value="+" type="button" id="add">
+                    </div>
+                </div>
+
+            </form></div>
+        </div>
+        <div class=" cart">
+            <button type="button" class="btn btn-success">加入购物车</button>
+        </div>
+</div>
+
+</div>
+</body>
+</html>
